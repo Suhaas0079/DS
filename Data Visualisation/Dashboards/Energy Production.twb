@@ -1,0 +1,632 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='EnergyProduction_17390534470360' path='/workbooks' revision='1.0' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column alias='All' caption='Source' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+        <calculation class='tableau' formula='1' />
+        <aliases>
+          <alias key='1' value='All' />
+          <alias key='2' value='Wind' />
+          <alias key='3' value='Solar' />
+        </aliases>
+        <members>
+          <member alias='All' value='1' />
+          <member alias='Wind' value='2' />
+          <member alias='Solar' value='3' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='intermittent-renewables-production-france' inline='true' name='federated.1emvtr51o3thbt17zzv600s49fcn' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='intermittent-renewables-production-france' name='textscan.084vavv13n5eqn1h6xva7155x3m7'>
+            <connection class='textscan' directory='E:/Repos/DS/Data Visualisation/Datasets' filename='intermittent-renewables-production-france.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.084vavv13n5eqn1h6xva7155x3m7' name='intermittent-renewables-production-france.csv' table='[intermittent-renewables-production-france#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+            <column datatype='string' name='Date and Hour' ordinal='0' />
+            <column datatype='date' name='Date' ordinal='1' />
+            <column datatype='datetime' name='StartHour' ordinal='2' />
+            <column datatype='datetime' name='EndHour' ordinal='3' />
+            <column datatype='string' name='Source' ordinal='4' />
+            <column datatype='real' name='Production' ordinal='5' />
+            <column datatype='integer' name='dayOfYear' ordinal='6' />
+            <column datatype='string' name='dayName' ordinal='7' />
+            <column datatype='string' name='monthName' ordinal='8' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[intermittent-renewables-production-france.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date and Hour</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Date and Hour]</local-name>
+            <parent-name>[intermittent-renewables-production-france.csv]</parent-name>
+            <remote-alias>Date and Hour</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[intermittent-renewables-production-france.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>StartHour</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[StartHour]</local-name>
+            <parent-name>[intermittent-renewables-production-france.csv]</parent-name>
+            <remote-alias>StartHour</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EndHour</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[EndHour]</local-name>
+            <parent-name>[intermittent-renewables-production-france.csv]</parent-name>
+            <remote-alias>EndHour</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Source</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Source]</local-name>
+            <parent-name>[intermittent-renewables-production-france.csv]</parent-name>
+            <remote-alias>Source</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Production</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Production]</local-name>
+            <parent-name>[intermittent-renewables-production-france.csv]</parent-name>
+            <remote-alias>Production</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dayOfYear</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[dayOfYear]</local-name>
+            <parent-name>[intermittent-renewables-production-france.csv]</parent-name>
+            <remote-alias>dayOfYear</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dayName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[dayName]</local-name>
+            <parent-name>[intermittent-renewables-production-france.csv]</parent-name>
+            <remote-alias>dayName</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>monthName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[monthName]</local-name>
+            <parent-name>[intermittent-renewables-production-france.csv]</parent-name>
+            <remote-alias>monthName</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Calculation1' datatype='real' name='[Calculation_3086936114634199041]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='CASE [Parameters].[Parameter 1]&#13;&#10;WHEN 1 THEN SUM([Production])&#13;&#10;WHEN 2 THEN SUM(IF [Source] = &apos;Solar&apos; &#13;&#10;                THEN [Production] &#13;&#10;                ELSE 0&#13;&#10;                END)&#13;&#10;WHEN 3 Then SUM(IF [Source] = &apos;Wind&apos; &#13;&#10;                THEN [Production] &#13;&#10;                ELSE 0&#13;&#10;                END)&#13;&#10;END' />
+      </column>
+      <column aggregation='Hour' caption='End Hour' datatype='datetime' name='[EndHour]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' caption='Start Hour' datatype='datetime' name='[StartHour]' role='dimension' type='ordinal' />
+      <column caption='intermittent-renewables-production-france.csv' datatype='table' name='[__tableau_internal_object_id__].[intermittent-renewables-production-france.csv_C244CDD6CE024CBAB6236EEE4DFF7471]' role='measure' type='quantitative' />
+      <column caption='Day Name' datatype='string' name='[dayName]' role='dimension' type='nominal' />
+      <column caption='Day Of Year' datatype='integer' name='[dayOfYear]' role='dimension' type='quantitative' />
+      <column caption='Month Name' datatype='string' name='[monthName]' role='dimension' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/SAISUH~1/AppData/Local/Temp/TableauTemp/#TableauTemp_13q7gk61h5jxxn10kyu9o15owj3s.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='02/08/2025 09:46:54 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Date and Hour</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Date and Hour]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date and Hour</remote-alias>
+              <ordinal>0</ordinal>
+              <family>intermittent-renewables-production-france.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>35602</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[intermittent-renewables-production-france.csv_C244CDD6CE024CBAB6236EEE4DFF7471]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>1</ordinal>
+              <family>intermittent-renewables-production-france.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>4126</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[intermittent-renewables-production-france.csv_C244CDD6CE024CBAB6236EEE4DFF7471]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>StartHour</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[StartHour]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>StartHour</remote-alias>
+              <ordinal>2</ordinal>
+              <family>intermittent-renewables-production-france.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[intermittent-renewables-production-france.csv_C244CDD6CE024CBAB6236EEE4DFF7471]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>EndHour</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[EndHour]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>EndHour</remote-alias>
+              <ordinal>3</ordinal>
+              <family>intermittent-renewables-production-france.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[intermittent-renewables-production-france.csv_C244CDD6CE024CBAB6236EEE4DFF7471]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Source</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Source]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Source</remote-alias>
+              <ordinal>4</ordinal>
+              <family>intermittent-renewables-production-france.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[intermittent-renewables-production-france.csv_C244CDD6CE024CBAB6236EEE4DFF7471]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Production</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Production]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Production</remote-alias>
+              <ordinal>5</ordinal>
+              <family>intermittent-renewables-production-france.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11137</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[intermittent-renewables-production-france.csv_C244CDD6CE024CBAB6236EEE4DFF7471]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>dayOfYear</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[dayOfYear]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>dayOfYear</remote-alias>
+              <ordinal>6</ordinal>
+              <family>intermittent-renewables-production-france.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>779</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[intermittent-renewables-production-france.csv_C244CDD6CE024CBAB6236EEE4DFF7471]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>dayName</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[dayName]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>dayName</remote-alias>
+              <ordinal>7</ordinal>
+              <family>intermittent-renewables-production-france.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[intermittent-renewables-production-france.csv_C244CDD6CE024CBAB6236EEE4DFF7471]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>monthName</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[monthName]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>monthName</remote-alias>
+              <ordinal>8</ordinal>
+              <family>intermittent-renewables-production-france.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[intermittent-renewables-production-france.csv_C244CDD6CE024CBAB6236EEE4DFF7471]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='1000' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='All' caption='Source' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+          <calculation class='tableau' formula='1' />
+          <aliases>
+            <alias key='1' value='All' />
+            <alias key='2' value='Wind' />
+            <alias key='3' value='Solar' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='intermittent-renewables-production-france.csv' id='intermittent-renewables-production-france.csv_C244CDD6CE024CBAB6236EEE4DFF7471'>
+            <properties context=''>
+              <relation connection='textscan.084vavv13n5eqn1h6xva7155x3m7' name='intermittent-renewables-production-france.csv' table='[intermittent-renewables-production-france#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='Date and Hour' ordinal='0' />
+                  <column datatype='date' name='Date' ordinal='1' />
+                  <column datatype='datetime' name='StartHour' ordinal='2' />
+                  <column datatype='datetime' name='EndHour' ordinal='3' />
+                  <column datatype='string' name='Source' ordinal='4' />
+                  <column datatype='real' name='Production' ordinal='5' />
+                  <column datatype='integer' name='dayOfYear' ordinal='6' />
+                  <column datatype='string' name='dayName' ordinal='7' />
+                  <column datatype='string' name='monthName' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Highlight 1 (generated)' name='[Action1_A659020CA3A6444B813FB9BFCE6FDAF1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Sheet 1' />
+      <command command='tsc:brush'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Sheet 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Production Chart</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='intermittent-renewables-production-france' name='federated.1emvtr51o3thbt17zzv600s49fcn' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='All' caption='Source' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+              <calculation class='tableau' formula='1' />
+              <aliases>
+                <alias key='1' value='All' />
+                <alias key='2' value='Wind' />
+                <alias key='3' value='Solar' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1emvtr51o3thbt17zzv600s49fcn'>
+            <column caption='Calculation1' datatype='real' name='[Calculation_3086936114634199041]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 1]&#13;&#10;WHEN 1 THEN SUM([Production])&#13;&#10;WHEN 2 THEN SUM(IF [Source] = &apos;Solar&apos; &#13;&#10;                THEN [Production] &#13;&#10;                ELSE 0&#13;&#10;                END)&#13;&#10;WHEN 3 Then SUM(IF [Source] = &apos;Wind&apos; &#13;&#10;                THEN [Production] &#13;&#10;                ELSE 0&#13;&#10;                END)&#13;&#10;END' />
+            </column>
+            <column datatype='real' name='[Production]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Source]' role='dimension' type='nominal' />
+            <column caption='Month Name' datatype='string' name='[monthName]' role='dimension' type='nominal' />
+            <column-instance column='[Source]' derivation='None' name='[none:Source:nk]' pivot='key' type='nominal' />
+            <column-instance column='[monthName]' derivation='None' name='[none:monthName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_3086936114634199041]' derivation='User' name='[usr:Calculation_3086936114634199041:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1emvtr51o3thbt17zzv600s49fcn].[usr:Calculation_3086936114634199041:qk]' scope='rows' value='Production (In KwH)' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='vertical-align' field='[federated.1emvtr51o3thbt17zzv600s49fcn].[none:monthName:nk]' value='auto' />
+            <format attr='font-style' field='[federated.1emvtr51o3thbt17zzv600s49fcn].[none:monthName:nk]' value='normal' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' scope='rows' value='auto' />
+            <format attr='wrap' scope='cols' value='auto' />
+            <format attr='vertical-align' field='[federated.1emvtr51o3thbt17zzv600s49fcn].[none:monthName:nk]' value='auto' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1emvtr51o3thbt17zzv600s49fcn].[none:Source:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1emvtr51o3thbt17zzv600s49fcn].[usr:Calculation_3086936114634199041:qk]</rows>
+        <cols>[federated.1emvtr51o3thbt17zzv600s49fcn].[none:monthName:nk]</cols>
+      </table>
+      <simple-id uuid='{78A945D2-E224-4AEB-9692-FE0BBB3C9BD4}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='35'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='240'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='48'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='293'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.1emvtr51o3thbt17zzv600s49fcn].[none:Source:nk]</field>
+            <field>[federated.1emvtr51o3thbt17zzv600s49fcn].[none:monthName:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{92024C46-CA60-44B5-9173-73B11293FDBD}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
